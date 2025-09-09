@@ -1,12 +1,12 @@
 ## Problem 1
 
-Let $ \alpha $ be learning rate.
+Let $\alpha$ be learning rate.
 
 By gradient descent algorithm,
-$$ \theta^1 = \theta^0 - \alpha \nabla_{\theta}\text{Loss} $$
+$$\theta^1 = \theta^0 - \alpha \nabla_{\theta}\text{Loss}$$
 
 Consider MSE loss of SGD:
-$$ \text{Loss} = \frac{1}{2}\| y - h(x_1, x_2)\|^2 $$
+$$\text{Loss} = \frac{1}{2}\| y - h(x_1, x_2)\|^2$$
 
 Thus,
 $$
