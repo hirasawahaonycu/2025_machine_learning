@@ -100,21 +100,37 @@ $$ \sigma(x) = \frac{1}{1+e^{-x}} $$
 
 Hyperbolic function:
 
+$$ \text{sinh}(z) = \frac{e^{z} - e^{-z}}{2} $$
+$$ \text{cosh}(z) = \frac{e^{z} + e^{-z}}{2} $$
 $$ \text{tanh}(z) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}} $$
 
-Noticed that
+Since
+
+$$ e^x = \frac{\sigma(x)}{1 - \sigma(x)}, $$
+
+we have
 
 $$
 \begin{align*}
-\text{tanh}(x) + 1 &= \frac{2e^{x}}{e^{x} + e^{-x}} \\
-&= \frac{2}{1 + e^{-2x}} \\
-&= 2 \sigma(2x)
+\text{sinh}(x) &= \frac{1}{2} \left(\frac{\sigma(x)}{1 - \sigma(x)} - \frac{1 - \sigma(x)}{\sigma(x)}\right) \\
+&= \frac{2 \sigma(x) - 1}{2 \sigma(x) (1 - \sigma(x))}
 \end{align*}
 $$
 
-So,
+$$
+\begin{align*}
+\text{cosh}(x) &= \frac{1}{2} \left(\frac{\sigma(x)}{1 - \sigma(x)} + \frac{1 - \sigma(x)}{\sigma(x)}\right) \\
+&= \frac{2 \sigma^2(x) - 2 \sigma(x) + 1}{2 \sigma(x) (1 - \sigma(x))}
+\end{align*}
+$$
 
-$$ \text{tanh}(x) = 2 \sigma(2x) - 1 $$
+$$
+\begin{align*}
+\text{tanh}(x) &= \frac{2e^{x}}{e^{x} + e^{-x}} - 1 \\
+&= \frac{2}{1 + e^{-2x}} - 1 \\
+&= 2 \sigma(2x) - 1
+\end{align*}
+$$
 
 
 ## Problem 3
