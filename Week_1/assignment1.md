@@ -27,7 +27,7 @@ we have
 
 $$ \sigma'(x) = \sigma(x) \cdot (1 - \sigma(x)) $$
 
-By $ h(x_1, x_2) = \sigma(b + w_1x_1 + w_2x_2) $, we have
+By $h(x_1, x_2) = \sigma(b + w_1x_1 + w_2x_2)$, we have
 
 $$
 \begin{align*}
@@ -39,7 +39,7 @@ $$
 
 So,
 
-$$ \theta^1 = \theta^0 + \alpha \, h(x_1, x_2) \, (y - h(x_1, x_2)) \, (1 - h(x_1, x_2)) \cdot (1, x_1, x_2) $$
+$$ \theta^1 = \theta^0 + \alpha h(x_1, x_2) (y - h(x_1, x_2)) (1 - h(x_1, x_2)) \cdot (1, x_1, x_2) $$
 
 Given $(x_1, x_2, y) = (1, 2, 3)$ and $\theta^0 = (4, 5, 6)$,
 
@@ -47,7 +47,7 @@ $$ h(1, 2) = \sigma(21) $$
 
 Thus,
 
-$$ \theta^1 = (4, 5, 6) + \alpha \, \sigma(21) \, (3 - \sigma(21)) \, (1 - \sigma(21)) \cdot (1, 1, 2) $$
+$$ \theta^1 = (4, 5, 6) + \alpha \sigma(21) (3 - \sigma(21)) (1 - \sigma(21)) \cdot (1, 1, 2) $$
 
 
 ## Problem 2
@@ -85,9 +85,9 @@ So,
 
 $$
 \begin{align*}
-\frac{d}{dx}\sigma(x) &= \sigma(x) \, (1 - \sigma(x)) \\
-\frac{d^2}{dx^2}\sigma(x) &= \sigma(x) \, (1 - \sigma(x)) \, (1 - 2 \sigma(x)) \\
-\frac{d^3}{dx^3}\sigma(x) &= \sigma(x) \, (1 - \sigma(x)) \, (1 - 6 \sigma(x) + 6 \sigma^2(x)) 
+\frac{d}{dx}\sigma(x) &= \sigma(x) (1 - \sigma(x)) \\
+\frac{d^2}{dx^2}\sigma(x) &= \sigma(x) (1 - \sigma(x)) (1 - 2 \sigma(x)) \\
+\frac{d^3}{dx^3}\sigma(x) &= \sigma(x) (1 - \sigma(x)) (1 - 6 \sigma(x) + 6 \sigma^2(x)) 
 \end{align*}
 $$
 
