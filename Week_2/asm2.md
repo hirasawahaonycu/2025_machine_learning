@@ -89,4 +89,11 @@ $$
 
 ## Problem 2
 
-1. In the backpropagation, each $\delta^{[l]}$ is multiplied by the previous $\delta^{[l+1]}$. However, if during a single epoch, x becomes either extremely small or extremely large, the subsequent values of x will likely remain very small or very large. This can cause the model to stop learning entirely or lead to excessively large parameter updates. How to solve this problem?
+In the backpropagation, each $\delta^{[l]}$ is multiplied by the previous $\delta^{[l+1]}$. However, if during a single epoch, x becomes either extremely small or extremely large, the subsequent values of x will likely remain very small or very large. This can cause the model to stop learning entirely or lead to excessively large parameter updates. How to solve this problem?
+
+Answer of ChatGPT:
+1. Proper weight initialization: Xavier or He initialization keeps signals stable during forward and backward propagation.
+2. Use suitable activation functions: ReLU or Leaky ReLU are less prone to vanishing gradients compared to sigmoid or tanh.
+3. Gradient clipping: Limit the maximum norm of gradients to prevent exploding gradients.
+4. Normalization techniques: Batch Normalization helps stabilize the distribution of activations across layers.
+5. Adjust the learning rate: A smaller learning rate helps avoid excessively large updates.
