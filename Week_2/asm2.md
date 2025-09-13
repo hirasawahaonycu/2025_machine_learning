@@ -51,11 +51,26 @@ For $l = L-1, L-2, ..., 2$,
 $$
 \delta^{[l]}
 = \frac{\partial a^{[L]}}{\partial z^{[l]}} 
-= \sigma'( z^{[l]} )\circ \left[(W^{[l+1]})^T\delta^{[l+1]}\right]
+= \sigma'(z^{[l]}) \circ \left[(W^{[l+1]})^T \delta^{[l+1]} \right]
 $$
 
 #### 3. Compute $\nabla a^{[L]}(x)$
 
+Note that
+
+$$
+z^{[2]} = W^{[2]}x + b^{[2]}
+$$
+
+Thus,
+
+$$
+\nabla_x a^{[L]}(x)
+= \frac{\partial a^{[L]}}{\partial x}
+= (W^{[2]})^{T} \delta^{[2]}
+$$
+
+<!-- 
 Note that
 
 $$
@@ -85,6 +100,7 @@ $$
 = \frac{\partial a^{[L]}}{\partial z^{[l]}} \cdot \frac{\partial z^{[l]}}{\partial W^{[l]}}
 = \delta^{[l]} (a^{[l-1]})^{T}
 $$
+-->
 
 
 ## Problem 2
