@@ -14,18 +14,18 @@
 > 给定一个区域 $\Omega \subseteq \mathbb{R}^{d}$，整数 $k \geq 0$ 以及 $1 \leq p \leq \infty$，Sobolev 空间定义为
 > 
 > $$
-> W^{k,p}(\Omega) = \{ f \in L^p(\Omega) \mid D^\alpha f \in L^p(\Omega) \ \forall \alpha \in \mathbb{N}_0^d \ \text{with } |\alpha| \leq k \}.
+> W^{k,p}(\Omega) = \left\{ f \in L^p(\Omega) \mid D^\alpha f \in L^p(\Omega) \ \forall \alpha \in \mathbb{N}_0^d \ \text{with } |\alpha| \leq k \right\}.
 > $$
 > 
 > 當 $p = \infty$ 時，定義
 > 
 > $$
-> \| f \|_{W^{k,\infty}(\Omega)} 
-> = \max_{0 \leq m \leq k} \ \max_{|\alpha| = m} \ \| D^\alpha f \|_{L^\infty(\Omega)}.
+> \parallel f \parallel_{W^{k,\infty}(\Omega)} 
+> = \max_{0 \leq m \leq k} \max_{|\alpha| = m} \parallel D^\alpha f \parallel_{L^\infty(\Omega)}.
 > $$
 
 
-簡而言之，$W^{k, \infty}$-范數是用來衡量函數和它的各階導數的最大值的。\
+簡而言之，$W^{k, \infty}$ -范數是用來衡量函數和它的各階導數的最大值的。\
 它要求從函數 $f$ 的前 $k$ 階導數和函數值本身中挑出最大值，即 $f, Df, D^2f, ..., D^kf$，例如：
 - $W^{0, \infty}$ ：函數的最大值
 - $W^{1, \infty}$ ：函數和其導數的最大值
@@ -38,19 +38,19 @@
 令 $p \in \mathbb{N}$ 和 $f \in C^{p+2}$，有限差分算子定義為
 
 $$
-\delta^p_h[f](x) = \sum_{i=0}^{p} (-1)^i \binom{p}{i} f\!\left(x+\Big(\tfrac{p}{2}-i\Big)h \right).
+\delta^p_h[f] (x) = \sum_{i=0}^{p} (-1)^i \binom{p}{i} f\!\left(x+\Big(\tfrac{p}{2}-i\Big)h \right).
 $$
 
 它能用來近似函數的 $p$-階導數：
 
 $$
-\delta^p_h[f](x) \rightarrow h^p \cdot f^{(p)}(x) \quad \text{ as } h \rightarrow 0
+\delta^p_h[f] (x) \rightarrow h^p \cdot f^{(p)}(x) \quad \text{ as } h \rightarrow 0
 $$
 
 在接下來的解析中，我們定義
 
 $$
-\hat{f}_{q, h}(x) := \frac{\delta^{q}_{hx}[\sigma](0)}{\sigma^{(q)}(0) h^{q}}
+\hat{f}_{q, h}(x) := \frac{\delta^{q}_{hx}[\sigma] (0)}{\sigma^{(q)}(0) h^{q}}
 $$
 
 
@@ -66,8 +66,8 @@ $$
 > 其寬度為 $\tfrac{s+1}{2}$，使得
 > 
 > $$
-> \max_{\substack{p \leq s \\ p \ \text{odd}}} 
-> \big\| f_p - (\Psi_{s,\epsilon})_{\tfrac{p+1}{2}} \big\|_{W^{k,\infty}} \leq \epsilon,
+> \max_{p \leq s,\ p \ \text{odd}} 
+> \parallel f_p - (\Psi_{s,\epsilon})_{\tfrac{p+1}{2}} \parallel_{W^{k,\infty}} \leq \epsilon,
 > $$
 > 
 > 其中 $f_p(x) = x^p$。  
@@ -92,7 +92,7 @@ $$
 
 再說得簡單點，在理論上，這個淺層tanh網絡可以逼近任意一個奇數階的單項式，而且是很好的逼近（它們的高階導數也能逼近）
 
-當然，$\epsilon$ 取得越小，神經網絡的權重規模也就越大 \
+當然， $\epsilon$ 取得越小，神經網絡的權重規模也就越大 \
 引理也指出，這些權重規模是可以被限制住的，它大約為
 
 $$
@@ -114,7 +114,7 @@ $$
 
 $$
 h^p \cdot \text{tanh}^{(p)}(x)
-\approx \delta^p_h[\text{tanh}](x)
+\approx \delta^p_h[\text{tanh}] (x)
 = \sum_{i=0}^{p} (-1)^i \binom{p}{i} \text{tanh}\!\left(x+\Big(\tfrac{p}{2}-i\Big)h \right).
 $$
 
@@ -124,7 +124,7 @@ $$
 然後，我們定義了導數的歸一化
 
 $$
-\hat{f}_{q, h}(x) := \frac{\delta^{q}_{hx}[\sigma](0)}{\sigma^{(q)}(0) h^{q}}
+\hat{f}_{q, h}(x) := \frac{\delta^{q}_{hx}[\sigma] (0)}{\sigma^{(q)}(0) h^{q}}
 $$
 
 任務就是證明
@@ -136,7 +136,7 @@ $$
 嚴格來說
 
 $$
-\Big\| \hat{f}_{q, h}(x) - f_p(x) \Big\|_{W^{k,\infty}} \leq \epsilon
+\Big\parallel \hat{f}_{q, h}(x) - f_p(x) \Big\parallel_{W^{k,\infty}} \leq \epsilon
 $$
 
 這裡的證明就十分複雜了，略
@@ -144,7 +144,7 @@ $$
 
 ## Lemma 3.2
 
-> 設 $k \in \mathbb{N}_0$，$s \in 2\mathbb{N}-1$（即 $s$ 為奇數），且 $M > 0$。  
+> 設 $k \in \mathbb{N}_0$， $s \in 2\mathbb{N}-1$（即 $s$ 為奇數），且 $M > 0$。  
 > 對任意 $\epsilon > 0$，存在一個淺層 tanh 神經網路  
 > 
 > $$
@@ -154,7 +154,7 @@ $$
 > 其寬度為 $\tfrac{3(s+1)}{2}$，使得
 > 
 > $$
-> \max_{p \leq s} \big\| f_p - (\Psi_{s,\epsilon})_p \big\|_{W^{k,\infty}} \leq \epsilon,
+> \max_{p \leq s} \big\parallel f_p - (\Psi_{s,\epsilon})_p \big\parallel_{W^{k,\infty}} \leq \epsilon,
 > $$
 > 
 > 其中 $f_p(x) = x^p$。  
@@ -191,11 +191,10 @@ $$
 因為tanh的展開式只包含奇數項，所以我們無法用 3.1 的方法解出偶數項 \
 為了解決這個問題，我們需要引用這樣一個公式：
 
-對於任意 $n \in \mathbb{N}$，$\alpha > 0$，有
+對於任意 $n \in \mathbb{N}, \alpha > 0$ ，有
 
 $$
-y^{2n} = \frac{1}{2\alpha(2n+1)} \Bigg( (y+\alpha)^{2n+1} - (y-\alpha)^{2n+1}
-- 2 \sum_{k=0}^{n-1} \binom{2n+1}{2k} \alpha^{\,2(n-k)+1} \, y^{2k} \Bigg)
+y^{2n} = \frac{1}{2\alpha(2n+1)} \Bigg( (y+\alpha)^{2n+1} - (y-\alpha)^{2n+1} - 2 \sum_{k=0}^{n-1} \binom{2n+1}{2k} \alpha^{\,2(n-k)+1} \, y^{2k} \Bigg)
 $$
 
 這個公式告訴我們，偶數項可以通過「兩個奇數項的差」再減去「一些低階偶數項」得到 \
