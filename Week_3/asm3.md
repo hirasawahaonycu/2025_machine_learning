@@ -24,7 +24,7 @@ $$
 = \max_{0 \leq m \leq k} \max_{|\alpha| = m} \parallel D^\alpha f \parallel_{L^\infty(\Omega)}.
 $$
 
-簡而言之，$W^{k, \infty}$ -范數是用來衡量函數和它的各階導數的最大值的。\
+簡而言之， $W^{k, \infty}$ -范數是用來衡量函數和它的各階導數的最大值的。\
 它要求從函數 $f$ 的前 $k$ 階導數和函數值本身中挑出最大值，即 $f, Df, D^2f, ..., D^kf$，例如：
 - $W^{0, \infty}$ ：函數的最大值
 - $W^{1, \infty}$ ：函數和其導數的最大值
@@ -37,7 +37,7 @@ $$
 令 $p \in \mathbb{N}$ 和 $f \in C^{p+2}$，有限差分算子定義為
 
 $$
-\delta^p_h[f] (x) = \sum_{i=0}^{p} (-1)^i \binom{p}{i} f\!\left(x+\Big(\tfrac{p}{2}-i\Big)h \right).
+\delta^p_h[f] (x) = \sum_{i=0}^{p} (-1)^i \binom{p}{i} f\left(x+\Big(\tfrac{p}{2}-i\Big)h \right).
 $$
 
 它能用來近似函數的 $p$-階導數：
@@ -76,7 +76,7 @@ $$
 此外，該神經網路的權重大小滿足以下增長規律：
 
 $$
-O\!\left(\epsilon^{-\tfrac{s}{2}} \, \big(2(s+2)\sqrt{2}M\big)^{s(s+3)}\right),
+O\left(\epsilon^{-\tfrac{s}{2}} \, \big(2(s+2)\sqrt{2M}\big)^{s(s+3)}\right),
 $$
 
 當 $\epsilon \to 0$ 且 $s$ 很大時成立。
@@ -97,7 +97,7 @@ $$
 引理也指出，這些權重規模是可以被限制住的，它大約為
 
 $$
-\text{權重大小} \sim O\!\left(\epsilon^{-\tfrac{s}{2}}\right)
+\text{權重大小} \sim O\left(\epsilon^{-\tfrac{s}{2}}\right)
 $$
 
 ### 證明思路
@@ -116,7 +116,7 @@ $$
 $$
 h^p \cdot \text{tanh}^{(p)}(x)
 \approx \delta^p_h[\text{tanh}] (x)
-= \sum_{i=0}^{p} (-1)^i \binom{p}{i} \text{tanh}\!\left(x+\Big(\tfrac{p}{2}-i\Big)h \right).
+= \sum_{i=0}^{p} (-1)^i \binom{p}{i} \text{tanh}\left(x+\Big(\tfrac{p}{2}-i\Big)h \right).
 $$
 
 而且，因為tanh是奇函數，即 $\text{tanh}(-x) = -\text{tanh}(x)$，所以我們可以對稱地取代掉一半的隱藏層神經元 \
@@ -165,7 +165,7 @@ $$
 此外，該神經網路的權重大小滿足以下增長規律：
 
 $$
-O\!\left(\epsilon^{-\tfrac{s}{2}} \, \big(\sqrt{M(s+2)}\big)^{\tfrac{3s(s+3)}{2}}\right),
+O\left(\epsilon^{-\tfrac{s}{2}} \, \big(\sqrt{M}(s+2)\big)^{\tfrac{3s(s+3)}{2}}\right),
 $$
 
 當 $\epsilon \to 0$ 且 $s$ 很大時成立。
@@ -183,7 +183,7 @@ $$
 與引理 3.1 類似的，權重規模有
 
 $$
-\text{權重大小} \sim O\!\left(\epsilon^{-\tfrac{s}{2}}\right)
+\text{權重大小} \sim O\left(\epsilon^{-\tfrac{s}{2}}\right)
 $$
 
 注意，這個引理和 3.1 的區別在於，3.1 只能列出奇數項，而這裡可以列出小於等於 $s$ 的所有項。也就是說，這個 3.2 是 3.1 的加強版。
