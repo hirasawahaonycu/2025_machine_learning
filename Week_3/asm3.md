@@ -11,21 +11,17 @@
 
 ### Sobolev 空间 和 $W^{k, \infty}$-范數
 
-> 给定一个区域 $\Omega \subseteq \mathbb{R}^{d}$，整数 $k \geq 0$ 以及 $1 \leq p \leq \infty$，Sobolev 空间定义为
-> 
-> $$
-> W^{k,p}(\Omega) = \{ f \in L^p(\Omega) \mid D^\alpha f \in L^p(\Omega) \ \forall \alpha \in \mathbb{N}_0^d \ \text{with } |\alpha| \leq k \}.
-> $$
-> 
-> 當 $p = \infty$ 時，定義
-> 
-> $$
-> \parallel f \parallel_{W^{k,\infty}(\Omega)} 
-> = \max_{0 \leq m \leq k} \max_{|\alpha| = m} \parallel D^\alpha f \parallel_{L^\infty(\Omega)}.
-> $$
+给定一个区域 $\Omega \subseteq \mathbb{R}^{d}$，整数 $k \geq 0$ 以及 $1 \leq p \leq \infty$，Sobolev 空间定义为
 
 $$
-S = \{ ... \}
+W^{k,p}(\Omega) = \Bigg( f \in L^p(\Omega) \mid D^\alpha f \in L^p(\Omega) \ \forall \alpha \in \mathbb{N}_0^d \ \text{with } |\alpha| \leq k \Bigg).
+$$
+
+當 $p = \infty$ 時，定義
+
+$$
+\parallel f \parallel_{W^{k,\infty}(\Omega)} 
+= \max_{0 \leq m \leq k} \max_{|\alpha| = m} \parallel D^\alpha f \parallel_{L^\infty(\Omega)}.
 $$
 
 簡而言之，$W^{k, \infty}$ -范數是用來衡量函數和它的各階導數的最大值的。\
@@ -59,29 +55,31 @@ $$
 
 ## Lemma 3.1
 
-> 設 $k \in \mathbb{N}_0$，且 $s \in 2\mathbb{N}-1$（即 $s$ 為奇數）。  
-> 則對任意 $\epsilon > 0$，存在一個淺層 tanh 神經網路
-> 
-> $$
-> \Psi_{s,\epsilon} : [-M,M] \to \mathbb{R}^{\tfrac{s+1}{2}}
-> $$
-> 
-> 其寬度為 $\tfrac{s+1}{2}$，使得
-> 
-> $$
-> \max_{p \leq s,\ p \ \text{odd}} 
-> \parallel f_p - (\Psi_{s,\epsilon})_{\tfrac{p+1}{2}} \parallel_{W^{k,\infty}} \leq \epsilon,
-> $$
-> 
-> 其中 $f_p(x) = x^p$。  
-> 
-> 此外，該神經網路的權重大小滿足以下增長規律：
-> 
-> $$
-> O\!\left(\epsilon^{-\tfrac{s}{2}} \, \big(2(s+2)\sqrt{2}M\big)^{s(s+3)}\right),
-> $$
-> 
-> 當 $\epsilon \to 0$ 且 $s$ 很大時成立。
+### 陳述
+
+設 $k \in \mathbb{N}_0$，且 $s \in 2\mathbb{N}-1$（即 $s$ 為奇數）。  
+則對任意 $\epsilon > 0$，存在一個淺層 tanh 神經網路
+
+$$
+\Psi_{s,\epsilon} : [-M,M] \to \mathbb{R}^{\tfrac{s+1}{2}}
+$$
+
+其寬度為 $\tfrac{s+1}{2}$，使得
+
+$$
+\max_{p \leq s,\ p \ \text{odd}} 
+\parallel f_p - (\Psi_{s,\epsilon})_{\tfrac{p+1}{2}} \parallel_{W^{k,\infty}} \leq \epsilon,
+$$
+
+其中 $f_p(x) = x^p$。  
+
+此外，該神經網路的權重大小滿足以下增長規律：
+
+$$
+O\!\left(\epsilon^{-\tfrac{s}{2}} \, \big(2(s+2)\sqrt{2}M\big)^{s(s+3)}\right),
+$$
+
+當 $\epsilon \to 0$ 且 $s$ 很大時成立。
 
 ### 神經網絡
 
@@ -147,28 +145,30 @@ $$
 
 ## Lemma 3.2
 
-> 設 $k \in \mathbb{N}_0$， $s \in 2\mathbb{N}-1$（即 $s$ 為奇數），且 $M > 0$。  
-> 對任意 $\epsilon > 0$，存在一個淺層 tanh 神經網路  
-> 
-> $$
-> \Psi_{s,\epsilon} : [-M,M] \to \mathbb{R}^s
-> $$
-> 
-> 其寬度為 $\tfrac{3(s+1)}{2}$，使得
-> 
-> $$
-> \max_{p \leq s} \parallel f_p - (\Psi_{s,\epsilon})_p \parallel_{W^{k,\infty}} \leq \epsilon,
-> $$
-> 
-> 其中 $f_p(x) = x^p$。  
-> 
-> 此外，該神經網路的權重大小滿足以下增長規律：
-> 
-> $$
-> O\!\left(\epsilon^{-\tfrac{s}{2}} \, \big(\sqrt{M(s+2)}\big)^{\tfrac{3s(s+3)}{2}}\right),
-> $$
-> 
-> 當 $\epsilon \to 0$ 且 $s$ 很大時成立。
+### 陳述
+
+設 $k \in \mathbb{N}_0$， $s \in 2\mathbb{N}-1$（即 $s$ 為奇數），且 $M 0$。  
+對任意 $\epsilon > 0$，存在一個淺層 tanh 神經網路  
+
+$$
+\Psi_{s,\epsilon} : [-M,M] \to \mathbb{R}^s
+$$
+
+其寬度為 $\tfrac{3(s+1)}{2}$，使得
+
+$$
+\max_{p \leq s} \parallel f_p - (\Psi_{s,\epsilon})_p \parallel_{W^{k,\infty}} \leq \epsilon,
+$$
+
+其中 $f_p(x) = x^p$。  
+
+此外，該神經網路的權重大小滿足以下增長規律：
+
+$$
+O\!\left(\epsilon^{-\tfrac{s}{2}} \, \big(\sqrt{M(s+2)}\big)^{\tfrac{3s(s+3)}{2}}\right),
+$$
+
+當 $\epsilon \to 0$ 且 $s$ 很大時成立。
 
 ### 神經網絡
 
