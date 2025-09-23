@@ -14,7 +14,7 @@
 > 给定一个区域 $\Omega \subseteq \mathbb{R}^{d}$，整数 $k \geq 0$ 以及 $1 \leq p \leq \infty$，Sobolev 空间定义为
 > 
 > $$
-> W^{k,p}(\Omega) = \left\{ f \in L^p(\Omega) \mid D^\alpha f \in L^p(\Omega) \ \forall \alpha \in \mathbb{N}_0^d \ \text{with } |\alpha| \leq k \right\}.
+> W^{k,p}(\Omega) = \{ f \in L^p(\Omega) \mid D^\alpha f \in L^p(\Omega) \ \forall \alpha \in \mathbb{N}_0^d \ \text{with } |\alpha| \leq k \}.
 > $$
 > 
 > 當 $p = \infty$ 時，定義
@@ -24,6 +24,9 @@
 > = \max_{0 \leq m \leq k} \max_{|\alpha| = m} \parallel D^\alpha f \parallel_{L^\infty(\Omega)}.
 > $$
 
+$$
+S = \{ ... \}
+$$
 
 簡而言之，$W^{k, \infty}$ -范數是用來衡量函數和它的各階導數的最大值的。\
 它要求從函數 $f$ 的前 $k$ 階導數和函數值本身中挑出最大值，即 $f, Df, D^2f, ..., D^kf$，例如：
@@ -136,7 +139,7 @@ $$
 嚴格來說
 
 $$
-\Big\parallel \hat{f}_{q, h}(x) - f_p(x) \Big\parallel_{W^{k,\infty}} \leq \epsilon
+\parallel \hat{f}_{q, h}(x) - f_p(x) \parallel_{W^{k,\infty}} \leq \epsilon
 $$
 
 這裡的證明就十分複雜了，略
@@ -154,7 +157,7 @@ $$
 > 其寬度為 $\tfrac{3(s+1)}{2}$，使得
 > 
 > $$
-> \max_{p \leq s} \big\parallel f_p - (\Psi_{s,\epsilon})_p \big\parallel_{W^{k,\infty}} \leq \epsilon,
+> \max_{p \leq s} \parallel f_p - (\Psi_{s,\epsilon})_p \parallel_{W^{k,\infty}} \leq \epsilon,
 > $$
 > 
 > 其中 $f_p(x) = x^p$。  
@@ -194,7 +197,7 @@ $$
 對於任意 $n \in \mathbb{N}, \alpha > 0$ ，有
 
 $$
-y^{2n} = \frac{1}{2\alpha(2n+1)} \Bigg( (y+\alpha)^{2n+1} - (y-\alpha)^{2n+1} - 2 \sum_{k=0}^{n-1} \binom{2n+1}{2k} \alpha^{\,2(n-k)+1} \, y^{2k} \Bigg)
+y^{2n} = \frac{1}{2\alpha(2n+1)} \Bigg( (y+\alpha)^{2n+1} - (y-\alpha)^{2n+1} - 2 \sum_{k=0}^{n-1} \binom{2n+1}{2k} \alpha^{\,2(n-k)+1} y^{2k} \Bigg)
 $$
 
 這個公式告訴我們，偶數項可以通過「兩個奇數項的差」再減去「一些低階偶數項」得到 \
