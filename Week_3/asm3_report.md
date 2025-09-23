@@ -34,7 +34,7 @@ However, there is a potential problem:
 The function values lie between 0 and 1,  
 
 $$
-f(x) \in [0, 1]
+f(x) \in (0, 1]
 $$  
 
 while the range of derivative values, after computation, is  
@@ -80,7 +80,7 @@ $$
 
 It can be observed that the error converges to its minimum within about 200 iterations.  
 
-![graph_1](graph/lossCurve.png)  
+![figure_1](figure/lossCurve.png)  
 
 
 ## Results
@@ -95,12 +95,12 @@ It can be observed that the error converges to its minimum within about 200 iter
 
 ### Function Value Comparison
 
-It can be seen that the results are almost indistinguishable from the original function.  
+It can be seen that the results are almost indistinguishable from the original function.
 
-![graph_2](graph/result_func.png)  
+![figure_2](figure/result_func.png)  
 
 ### Derivative Value Comparison
 
-The derivative values show the same behavior.  
+The derivative values same.
 
-![graph_3](graph/result_diff.png)  
+![figure_3](figure/result_diff.png)  
