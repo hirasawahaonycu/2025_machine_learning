@@ -54,7 +54,7 @@ $$
 我們從一個真實的數據樣本 $x_0$ 開始，在 $T$ 個時間步中，逐步地向它添加高斯噪聲，直到它最終變成一個正態分佈的隨機噪聲 $x_T \sim \mathcal{N}(0, I)$
 
 $$
-x_0 \xrightarrow{\text{加噪}} x_1 \xrightarrow{\text{加噪}} \dots \xrightarrow{\text{加噪}} x_T \sim \mathcal{N}(0, I)
+x_0 \xrightarrow{\text{noise}} x_1 \xrightarrow{\text{noise}} \dots \xrightarrow{\text{noise}} x_T \sim \mathcal{N}(0, I)
 $$
 
 #### 第二部：反向傳播
@@ -62,7 +62,7 @@ $$
 我們從 $x_T$ 開始，然後逐步去除噪聲，最終恢復出一個清晰的數據樣本 $x_0$
 
 $$
-x_T \xrightarrow{\text{去噪}} x_{T-1} \xrightarrow{\text{去噪}} \dots \xrightarrow{\text{去噪}} x_0
+x_T \xrightarrow{\text{denoising}} x_{T-1} \xrightarrow{\text{denoising}} \dots \xrightarrow{\text{denoising}} x_0
 $$
 
 這個去噪的過程正是模型需要學習的部分
