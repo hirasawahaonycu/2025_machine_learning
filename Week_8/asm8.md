@@ -4,6 +4,7 @@
 ## Problem 1
 
 > Show that the sliced score matching (SSM) loss can also be written as
+> 
 > $$
 > L_{SSM}=\mathbb{E}_{x\sim p(x)} \mathbb{E}_{v\sim p(v)} \left[\|v^TS(x;\theta)\|^2+2v^T\nabla_x (v^TS(x;\theta))\right]
 > $$
@@ -77,25 +78,34 @@ $$
 
 > *proof*
 >
-> 令 $S(x) = [S_1(x), S_2(x), ..., S_d(x)]^T$ ，則
+> 令 $S(x) = (S_1(x), S_2(x), \dots, S_d(x))^T$ ， \
+> 其雅可比矩陣為 $J_{ij} = \frac{\partial S_i}{\partial x_j}$
 >
+> 左式：
+> 
 > $$
-> v^T S(x) = \sum_i v_i S_i(x)
-> $$
->
-> 對 $x$ 求梯度：
->
-> $$
-> \nabla_x(v^T S(x)) = \sum_i v_i \nabla_x S_i(x) = (\nabla_x S(x))^T v
+> v^T (\nabla_x S(x)) v = v_i J_{ij} v_j = v_i \frac{\partial S_i}{\partial x_j} v_j
 > $$
 >
-> 再左乘 $v^T$ ，得到：
->
+> 右式：
+> 
 > $$
-> v^T \nabla_x(v^T S(x)) = v^T (\nabla_x S(x)) v
+> v^T \nabla_x (v^T S(x))
+> = v_k \frac{\partial}{\partial x_k} (v_i S_i(x))
+> = v_k v_i \frac{\partial S_i}{\partial x_k}
 > $$
 >
-> 因此兩者等價
+> 將指標重新命名（例如 $k \to j$ ），得：
+> 
+> $$
+> v_i \frac{\partial S_i}{\partial x_j} v_j
+> $$
+>
+> 因此左右兩式相等：
+> 
+> $$
+> v^T (\nabla_x S(x)) v = v^T \nabla_x (v^T S(x))
+> $$
 
 繼續，總結以上，我們得到
 
@@ -161,9 +171,9 @@ $$
 * **伊藤積分 (Itô Integral)**:
     SDE也可以寫成積分形式
 
-    $$
-    x_t = x_0 + \int^t_0 f(x_s, s)\,ds + \int^t_0 G(x_s, s)\,dW_s
-    $$
+$$
+x_t = x_0 + \int^t_0 f(x_s, s)\,ds + \int^t_0 G(x_s, s)\,dW_s
+$$
 
 * **求解方法**:
     * **解析解 (Analytical Solution)**: 對於一些結構相對簡單的 SDE，我們可以找到其精確的數學解，例如：
@@ -171,9 +181,9 @@ $$
         * **純擴散情況 (Pure diffusion)**: $dx_t = G(x_t, t)dW_t$
     * **數值解 (Numerical Solution)**: 對於大多數複雜的 SDE，我們無法找到解析解。此時，我們會採用數值方法來模擬系統演化的可能路徑，如**歐拉-丸山法 (Euler-Maruyama method)**：
     
-    $$
-    X_{n+1}=X_{n}+f(X_{n}, t_n)\Delta t + G(X_{n}, t_n)\Delta W(t_n)
-    $$
+$$
+X_{n+1}=X_{n}+f(X_{n}, t_n)\Delta t + G(X_{n}, t_n)\Delta W(t_n)
+$$
 
 
 ## Problem 3
