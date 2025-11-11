@@ -72,7 +72,7 @@ $$
 兩邊同時對 $x$ 積分（假設積分常數為0）
 
 $$
-- (F p) = - (f p) + \frac{1}{2} \frac{\partial}{\partial x} (g^2 p)
+-(F p) = - (f p) + \frac{1}{2} \frac{\partial}{\partial x} (g^2 p)
 $$
 
 計算得
