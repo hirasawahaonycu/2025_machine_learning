@@ -45,7 +45,6 @@ $$
 
 $$
 \frac{\partial p}{\partial t} = -\frac{\partial}{\partial x}(fp) + \frac{1}{2}\frac{\partial^2}{\partial x^2}(g^2 p)
-\tag{1}
 $$
 
 ### 第二步：ODE 的连续性方程
@@ -60,12 +59,11 @@ $$
 
 $$
 \frac{\partial p}{\partial t} + \frac{\partial}{\partial x} (p F) = 0
-\tag{2}
 $$
 
 ### 第三步：求解 $F$
 
-聯立方程(1)，(2)：
+聯立一，二步中的兩個方程：
 
 $$
 -\frac{\partial}{\partial x} (F p) = -\frac{\partial}{\partial x} (f p) + \frac{1}{2} \frac{\partial^2}{\partial x^2} (g^2 p)
