@@ -251,20 +251,11 @@
 
   * **AI 研究解答：**
     GDA (Gaussian Discriminant Analysis) 可以直接推廣到多類別問題。
-    在二元分類中，我們使用伯努利分佈（Bernoulli）來建模類別先驗 $P(y)$ 。在 $K$ 類別情形下，我們先驗改為使用 **多項式分佈 (Multinomial Distribution)**：
-    $$
-    P(y=k) = \phi_k, \quad \sum_{k=1}^K \phi_k = 1
-    $$
+    在二元分類中，我們使用伯努利分佈（Bernoulli）來建模類別先驗 $P(y)$ 。在 $K$ 類別情形下，我們先驗改為使用 **多項式分佈 (Multinomial Distribution)**： $P(y=k) = \phi_k, \quad \sum_{k=1}^K \phi_k = 1$
 
-    對於給定的類別 $k$ ，特徵 $x$ 仍然服從多變量高斯分佈：
-    $$
-    P(x|y=k) = \mathcal{N}(x; \mu_k, \Sigma_k)
-    $$
+    對於給定的類別 $k$ ，特徵 $x$ 仍然服從多變量高斯分佈： $P(x|y=k) = \mathcal{N}(x; \mu_k, \Sigma_k)$
 
-    預測時，根據貝氏定理選擇後驗機率最大的類別：
-    $$
-    \hat{y} = \arg\max_k P(y=k|x) = \arg\max_k \left( \log P(x|y=k) + \log P(y=k) \right)
-    $$
+    預測時，根據貝氏定理選擇後驗機率最大的類別： $\hat{y} = \arg\max_k P(y=k|x) = \arg\max_k \left( \log P(x|y=k) + \log P(y=k) \right)$
     
     這就是標準的 LDA (若 $\Sigma_k$ 相同) 或 QDA (若 $\Sigma_k$ 不同) 的多類別形式。
 
